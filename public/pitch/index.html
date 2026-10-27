@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>Клинический Компас — презентация</title>
+<style>
+:root{--navy:#3f5c88;--ice:#c2e1ff;--ink:#203654;--muted:#6e7f95;--line:#dce5f0;--paper:#f8fbff;--blue:#267ccc;--teal:#357b7b;--amber:#9b6d31;--rose:#a7525d;font-family:Manrope,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#e8edf5}*{box-sizing:border-box}body{margin:0;overflow:hidden}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #3e9fff;outline-offset:5px}.viewport{position:fixed;inset:0 0 72px;display:flex;align-items:center;justify-content:center;overflow:hidden}.stage{position:relative;width:1920px;height:1080px;flex:0 0 auto;transform-origin:center center;background:var(--paper)}.slide{position:absolute;inset:0;overflow:hidden;display:none;background:var(--paper);padding:70px 88px 68px}.slide.active{display:block}.slide-header{position:relative;z-index:2;margin-bottom:40px}.eyebrow{font-size:19px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:17px}.slide h1{font-size:58px;font-weight:650;line-height:1.1;letter-spacing:-.045em;max-width:1650px;margin:0}.slide h2{font-size:34px;line-height:1.2;letter-spacing:-.025em;margin:0 0 18px}.slide h3{font-size:27px;line-height:1.25;margin:0 0 14px;letter-spacing:-.02em}.slide p{margin:0}.body{position:relative;height:700px}.bullets{list-style:none;margin:0;padding:0;display:grid;gap:25px;align-content:start}.bullets li{font-size:29px;line-height:1.4;letter-spacing:-.013em;padding-left:26px;border-left:3px solid var(--ice);font-weight:450}.bullets li strong{font-weight:750}.body.two-columns{display:grid;grid-template-columns:510px 1fr;gap:60px}.body.reverse{grid-template-columns:1fr 480px}.body.reverse .bullets{grid-column:2;grid-row:1}.body.reverse .visual{grid-column:1;grid-row:1}.visual{position:relative;min-width:0;min-height:0}.small-label{font-size:18px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;color:var(--muted)}.caption{font-size:21px;line-height:1.5;color:var(--muted)}.rule{height:1px;background:var(--line);margin:20px 0}.slide-footer{position:absolute;bottom:28px;left:88px;right:88px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:17px}.footer-brand{display:flex;align-items:center;gap:9px}.footer-brand img{width:24px;height:24px;border-radius:5px}.slide-number{font-variant-numeric:tabular-nums;letter-spacing:.08em}.source-chips{display:flex;gap:9px;flex-wrap:wrap}.source-chips a{font-size:17px;color:var(--navy);text-decoration:none;padding:5px 9px;border-bottom:1px solid #b8cce3}.shot{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:white;padding:0;position:relative;width:100%;text-align:left;color:inherit}.shot img{display:block;width:100%;height:100%;object-fit:contain;object-position:top center}.shot-caption small{display:block;font-size:14px;color:#73869e;margin-top:3px}.shot-caption{position:absolute;left:0;bottom:0;right:0;background:#ffffffef;padding:10px 18px;font-size:17px;color:var(--navy);border-top:1px solid var(--line)}.shot:after{content:"↗";position:absolute;right:12px;top:10px;width:34px;height:34px;display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:50%;font-size:21px}.step-number{display:grid;place-items:center;flex:0 0 auto;font-size:18px;font-weight:750;border:1px solid #b9d3ef;width:42px;height:42px;border-radius:50%;color:var(--navy);background:#eef6ff}.path-row{display:flex;gap:0;align-items:stretch}.path-node{flex:1;padding:24px 20px;border:1px solid var(--line);background:#fff;position:relative}.path-node+.path-node{border-left:0}.path-node strong{display:block;font-size:25px;line-height:1.25;margin-top:19px}.path-node p{font-size:20px;line-height:1.4;color:var(--muted);margin-top:10px}.path-connector{height:2px;background:var(--navy);width:50px;position:relative;align-self:center;flex:0 0 auto}.path-connector:after{content:"";position:absolute;right:0;top:-5px;border-left:9px solid var(--navy);border-top:6px solid transparent;border-bottom:6px solid transparent}.build{transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1),filter .5s ease}.build-hidden{opacity:0;transform:translateY(20px);pointer-events:none}.slide.active .auto{animation:enter .8s cubic-bezier(.16,.8,.2,1) both;animation-delay:var(--delay,0ms)}.slide.active .bullets li{animation:enter .65s ease both;animation-delay:calc(180ms + var(--i)*110ms)}@keyframes enter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes trace{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}.trace{stroke-dasharray:1000;animation:trace 1.4s ease both}.accent-text{color:var(--blue)}.navy-panel{background:var(--navy);color:#fff}.navy-panel .small-label,.navy-panel .caption{color:#d2e2f6}.outline-panel{border:1px solid var(--line);background:#fff}.status{display:inline-flex;align-items:center;gap:8px;font-size:18px;line-height:1.35;padding:8px 12px;border-radius:6px;font-weight:650}.status:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}.status.teal{color:var(--teal);background:#eaf4f1}.status.amber{color:var(--amber);background:#fff4e2}.status.neutral{color:var(--muted);background:#eef2f7}.pill{display:inline-block;border:1px solid #cadaed;border-radius:99px;padding:8px 16px;font-size:19px;line-height:1.3;color:var(--navy)}.muted{color:var(--muted)}
+/* 01 — a single mark, a clear clinical route. */
+.slide.hero,.slide.scale{background:var(--navy);color:#fff}.hero .eyebrow,.scale .eyebrow{color:var(--ice)}.hero .slide-header{margin:0;width:1150px;position:absolute;left:88px;top:230px}.hero h1{font-size:104px;line-height:1.02;letter-spacing:-.065em;max-width:1000px}.hero .eyebrow{max-width:850px;line-height:1.55;font-size:21px;margin-bottom:35px}.hero .hero-logo{position:absolute;right:100px;top:165px;width:510px;height:510px;object-fit:contain}.hero .bullets{position:absolute;top:560px;left:88px;width:930px;gap:28px}.hero .bullets li{font-size:31px;border-color:#91bbeb;color:#eef7ff}.hero .hero-roles{position:absolute;left:88px;right:88px;bottom:130px;display:flex;align-items:center;gap:24px;font-size:24px;color:#d6e9ff}.hero-roles .role{padding:18px 25px;border:1px solid #7798c0}.hero-roles .between{height:1px;width:170px;background:#8cb4e4;position:relative}.hero-roles .between:after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;background:var(--ice);border-radius:50%}.hero .slide-footer,.scale .slide-footer{color:#c6daf1}.hero .footer-brand img,.scale .footer-brand img{display:none}.hero .deck-tag{position:absolute;right:115px;bottom:160px;max-width:420px;font-size:23px;line-height:1.6;color:#cfe4fb}
+/* 02–03 — the same information, different organisation. */
+.asis-map{height:480px;position:relative;margin-top:55px}.fragment{position:absolute;width:300px;min-height:142px;padding:27px;background:#fff;border:1px solid var(--line);border-radius:8px}.fragment strong{font-size:27px;display:block;margin-top:16px}.fragment:nth-child(1){left:0;top:0;transform:rotate(-4deg)}.fragment:nth-child(2){right:0;top:30px;transform:rotate(3deg)}.fragment:nth-child(3){left:25px;bottom:0;transform:rotate(-2deg)}.fragment:nth-child(4){right:15px;bottom:15px;transform:rotate(4deg)}.fragment .small-label{font-size:16px}.asis-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid #c5d4e6;width:220px;height:120px;display:grid;place-items:center;font-size:27px;text-align:center;line-height:1.2;background:#edf4fc;border-radius:8px;z-index:2}.asis-link{position:absolute;inset:0;width:100%;height:100%;z-index:0}.asis-link line{stroke:#8eabc9;stroke-width:2;stroke-dasharray:8 8}.fragment{z-index:1}.asis-map .final-caption{position:absolute;top:510px;width:100%;font-size:23px;text-align:center;color:var(--navy)}.tobe .body{height:700px}.tobe .bullets{grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:50px}.tobe-diagram .path-node{height:185px;padding:22px 26px}.tobe-diagram .path-node strong{font-size:28px}.loop-return{margin:22px 0 0 30px;border-left:2px solid #97b8db;border-bottom:2px solid #97b8db;border-right:2px solid #97b8db;height:55px;position:relative;color:var(--navy);text-align:center}.loop-return span{background:var(--paper);padding:0 17px;position:relative;top:39px;font-size:23px}.tobe-bottom{display:grid;grid-template-columns:1fr 500px;gap:55px;margin-top:55px;align-items:center}.tobe-bottom .shot{height:180px}.tobe-line{display:flex;align-items:center;gap:22px;font-size:28px;line-height:1.4;color:var(--navy)}.tobe-line b{font-size:65px;font-weight:450;letter-spacing:-.06em}
+/* 04–05 — evidence from the actual prototype. */
+.doctor .body{grid-template-columns:480px 1fr;gap:55px}.doctor .shot{height:610px;position:relative}.doctor .path-row{margin-top:25px}.doctor .path-node{padding:14px 16px;border:0;border-bottom:2px solid #c8d9ee;background:transparent}.doctor .path-node strong{font-size:21px;margin:0}.doctor .path-node.active-focus{border-color:var(--blue);background:#eaf4ff}.focus-dot{position:absolute;width:48px;height:48px;border:2px solid #fff;background:var(--blue);color:white;border-radius:50%;display:grid;place-items:center;font-size:21px;font-weight:750;box-shadow:0 0 0 9px #267ccc22}.focus-dot.one{left:42%;top:41%}.focus-dot.two{left:70%;top:37%}.focus-dot.three{left:73%;top:55%}.patient .body{display:grid;grid-template-columns:510px 1fr;gap:65px}.patient-screens{display:flex;gap:24px;height:620px;align-items:center}.patient-screens .shot{height:480px;flex:1;transition:opacity .5s,transform .6s}.patient-screens .shot:first-child{transform:translateY(-18px)}.patient-screens .shot:last-child{transform:translateY(18px)}.patient-screens .shot:not(.screen-active){opacity:.56}.patient .path-row{margin-top:32px}.patient .path-node{background:transparent;padding:15px 11px;border:0;border-top:1px solid var(--line)}.patient .path-node strong{font-size:19px;margin:0}
+/* 06 — deliberately reveal the context after the scores. */
+.contrast .body{display:grid;grid-template-columns:1fr 1fr;gap:40px;height:670px}.contrast-card{border:1px solid var(--line);background:#fff;padding:36px 40px;position:relative;border-radius:10px;min-width:0}.contrast-title{font-size:22px;color:var(--muted);margin-bottom:22px}.scores{display:flex;align-items:center;gap:22px;height:98px;font-size:70px;letter-spacing:-.055em;color:var(--navy);font-weight:600}.scores .arrow{font-size:28px;letter-spacing:0;color:#93abc6}.scores small{font-size:23px;letter-spacing:0;font-weight:500}.contrast-context{border-top:1px solid var(--line);margin-top:30px;padding-top:26px}.contrast-context p{font-size:26px;line-height:1.45;margin-bottom:22px}.contrast .bullets{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:5px}.contrast .bullets li{font-size:25px}.reveal-cue{position:absolute;right:40px;top:35px;font-size:18px;color:var(--muted)}
+/* 07–10 — native diagrams, not rasterised explanations. */
+.medical .body{display:grid;grid-template-columns:450px 1fr;gap:55px}.medical-flow{display:grid;grid-template-columns:300px 60px 340px 60px 1fr;align-items:center;height:440px}.inputs{display:grid;gap:16px}.input-node{border:1px solid var(--line);padding:17px;background:#fff;font-size:23px}.logic-node{padding:30px 26px;border:1px solid #afc8e5;background:#edf5ff;min-height:280px}.logic-node p{font-size:24px;line-height:1.55}.output-node{padding:28px 24px;min-height:280px;background:var(--navy);color:#fff}.output-node p{font-size:23px;line-height:1.55;color:#dbeaff}.medical .mini-evidence{margin-top:28px;display:flex;align-items:center;gap:24px}.medical .mini-evidence .shot{width:400px;height:185px}.medical .mini-evidence p{font-size:24px;color:var(--muted);line-height:1.5;max-width:560px}.forecast .body{display:grid;grid-template-columns:485px 1fr;gap:60px}.forecast-board{height:620px;position:relative;display:grid;grid-template-columns:380px 100px 1fr;align-items:center}.history-line{height:380px;padding:30px 25px;border-bottom:1px solid var(--line);position:relative}.history-line svg{width:100%;height:210px;display:block;margin:15px 0}.history-line p{font-size:22px;line-height:1.45}.history-line .small-label{font-size:17px}.branch-lines{height:455px;position:relative;width:100%}.branch-lines svg{width:100%;height:100%}.scenario-stack{display:grid;gap:20px}.scenario{padding:25px 27px;border-left:3px solid #aac7e7;background:#eef5fd}.scenario h3{font-size:25px;margin-bottom:9px}.scenario p{font-size:22px;color:#607690;line-height:1.45}.scenario:first-child{border-left-color:var(--navy)}.forecast-boundary{position:absolute;left:370px;top:80px;height:440px;border-left:2px dashed #9ab0c9}.forecast-foot{position:absolute;bottom:0;left:0;font-size:20px;color:var(--muted)}.architecture .body{display:grid;grid-template-columns:480px 1fr;gap:70px}.architecture-stack{display:grid;grid-template-columns:1fr 80px 1fr;grid-template-rows:130px 100px 180px 100px;gap:0;align-content:start;padding-top:10px}.arch-lane{font-size:18px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:15px}.arch-box{padding:27px 28px;border:1px solid var(--line);background:white;font-size:27px;position:relative}.arch-box small{font-size:19px;color:var(--muted);display:block;margin-top:10px;line-height:1.35}.arch-ui{grid-column:1;grid-row:1}.arch-api{grid-column:3;grid-row:1}.arch-arrow{display:grid;place-items:center;font-size:38px;color:#90accd}.arch-data{grid-column:1/-1;grid-row:2;margin:25px 0 0;background:#edf4fc;font-size:23px;text-align:center;padding:22px}.arch-modules{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.arch-modules div{border-top:3px solid #95b7dd;background:#fff;padding:23px 20px;font-size:23px;line-height:1.35}.arch-modules code{font-family:Consolas,monospace;font-size:17px;display:block;margin-top:14px;color:var(--muted);overflow-wrap:anywhere}.arch-output{grid-column:1/-1;grid-row:4;background:var(--navy);color:#fff;margin-top:25px;font-size:27px;padding:24px;text-align:center}.arch-target{grid-column:1/-1;margin-top:30px;border:1px dashed #a8bcd6;padding:16px 22px;font-size:21px;color:var(--muted);line-height:1.4}.quality .body{display:grid;grid-template-columns:500px 1fr;gap:65px}.quality-checks{display:flex;gap:12px;margin-bottom:60px}.quality-checks div{border-bottom:2px solid #a7c2e2;padding:15px 16px;flex:1;font-size:23px}.time-axis{height:250px;position:relative;padding-top:110px}.time-axis:before{content:"";height:2px;background:#a5bddb;left:0;right:0;top:135px;position:absolute}.time-event{position:absolute;width:270px;padding:20px 25px;background:#fff;border:1px solid #c3d5e9;border-radius:7px;top:40px;font-size:26px;line-height:1.4}.time-event small{display:block;font-size:20px;color:var(--muted);margin-top:7px}.time-event:after{content:"";position:absolute;width:12px;height:12px;background:var(--navy);border:5px solid #eef5ff;border-radius:50%;bottom:-50px;left:50%;box-sizing:content-box}.time-event.august{left:40px}.time-event.october{right:15px;top:190px}.time-event.october:after{top:-67px;bottom:auto}.time-gate{position:absolute;left:46%;top:0;height:355px;border-left:2px dashed var(--rose);color:var(--rose);font-size:20px;padding-left:12px}.blocked{position:absolute;left:55%;top:85px;padding:12px 18px;border:1px solid #e4c3c9;background:#fff3f3;color:var(--rose);font-size:22px;transform:rotate(-3deg)}.quality-message{margin-top:150px;font-size:26px;padding:27px 30px;background:#edf5ff;border-left:3px solid var(--navy);line-height:1.45}
+/* 11–14 — evidence, not inflated promises. */
+.cases .body{display:grid;grid-template-columns:445px 1fr;gap:55px}.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;align-content:start}.case-item{padding:23px 0 23px 62px;border-top:1px solid var(--line);position:relative;min-height:132px}.case-item .num{position:absolute;left:0;top:25px;font-size:22px;color:#8aa4c5;letter-spacing:.05em}.case-item h3{font-size:27px;margin-bottom:10px}.case-item p{font-size:23px;line-height:1.35;color:var(--muted)}.case-item:last-child{grid-column:1/-1;border-bottom:1px solid var(--line)}.tests .body{display:grid;grid-template-columns:520px 1fr;gap:65px}.metric-row{display:flex;gap:44px;padding:15px 0 35px;border-bottom:1px solid var(--line)}.metric{flex:1}.metric b{display:block;font-size:100px;font-weight:550;letter-spacing:-.07em;color:var(--navy);line-height:1}.metric span{display:block;font-size:23px;margin-top:16px;line-height:1.3;color:var(--muted)}.test-layers{display:grid;gap:0;margin-top:30px}.test-layer{padding:23px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}.test-layer strong{font-size:27px;font-weight:600}.test-layer small{font-size:21px;color:var(--muted);display:block;margin-top:8px}.tests .metrics-caption{font-size:21px;color:var(--muted);margin-top:25px}.sources .body{display:grid;grid-template-columns:480px 1fr;gap:60px}.trace-path{display:flex;align-items:center;gap:12px;margin:10px 0 35px}.trace-step{font-size:24px;padding:18px 19px;background:#edf5ff;color:var(--navy);flex:1;text-align:center;border-bottom:2px solid #abc5e4}.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.source-card{border:1px solid var(--line);background:#fff;padding:25px 27px;display:block;text-decoration:none;color:var(--ink);min-height:190px}.source-card .source-id{font-size:19px;color:var(--blue);font-weight:750;letter-spacing:.08em}.source-card h3{font-size:25px;line-height:1.3;margin:14px 0}.source-card p{font-size:21px;color:var(--muted);line-height:1.4}.source-card .external{float:right;color:var(--blue);font-size:22px}.source-card:hover{background:#eef6ff;border-color:#91b7e2}.pilot .body{display:grid;grid-template-columns:510px 1fr;gap:60px}.pilot-road{display:grid;grid-template-columns:1fr 1fr;gap:30px 35px}.pilot-stage{padding:29px 27px;border-top:3px solid #b9cde7;min-height:220px;background:#fff;position:relative}.pilot-stage .num{font-size:22px;color:#8aa7cc;margin-bottom:21px;display:block}.pilot-stage h3{font-size:28px;line-height:1.3}.pilot-stage p{font-size:22px;color:var(--muted);line-height:1.45;margin-top:17px}.pilot-stage .gate{font-size:18px;color:var(--navy);margin-top:18px;display:block}.pilot-stage.opened{border-color:var(--navy)}.pilot-bottom{margin-top:32px;font-size:22px;line-height:1.5;padding:24px;border:1px dashed #acc1dd;color:var(--navy)}.scale .slide-header{width:1390px}.scale h1{font-size:67px;max-width:1330px}.scale .scale-logo{position:absolute;right:80px;top:70px;width:230px;height:230px}.scale .body{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;margin-top:55px;height:650px}.scale .bullets{gap:30px}.scale .bullets li{border-color:#8cb6e5;color:#eef7ff;font-size:30px}.scale-road{display:grid;gap:0;padding-top:10px}.scale-step{padding:24px 0 27px 55px;border-left:1px solid #7598c4;position:relative;font-size:30px;line-height:1.3}.scale-step:before{position:absolute;left:-8px;top:30px;content:"";width:15px;height:15px;border:3px solid #b8d8ff;background:var(--navy);border-radius:50%}.scale-step small{display:block;color:#c0d8f4;font-size:21px;margin-top:10px;line-height:1.5}.scale-step:first-child:before{background:var(--ice)}.scale .closing-line{font-size:23px;line-height:1.6;color:#cce1fa;margin-top:34px;max-width:570px}
+/* Presentation controls and secondary views. */
+.controls{height:72px;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #d3deec;display:flex;align-items:center;justify-content:space-between;padding:0 24px;gap:18px;font-size:15px;z-index:10}.controls button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d6e0ee;background:#fff;color:var(--navy);border-radius:8px;height:38px;padding:0 13px;gap:8px}.controls button:hover{background:#eef5ff}.controls .primary{background:var(--navy);border-color:var(--navy);color:#fff}.control-group{display:flex;align-items:center;gap:9px}.help-text{color:#72839a;font-size:13px}.progress-wrap{height:3px;background:#dce5f0;position:fixed;bottom:72px;left:0;right:0;z-index:11}.progress{height:100%;background:var(--navy);transition:width .5s ease}.counter{font-size:15px;min-width:78px;text-align:center;color:var(--navy);font-variant-numeric:tabular-nums}.step-status{color:#6c7d96;font-size:13px;min-width:80px}.overview-dialog{width:min(1380px,94vw);height:min(900px,90vh);border:1px solid #bccde2;border-radius:14px;padding:26px;background:#f5f8fd;color:var(--ink)}dialog::backdrop{background:#1e3455aa;backdrop-filter:blur(6px)}.dialog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.dialog-top h2{font-size:23px;margin:0}.dialog-close{width:36px;height:36px;border:1px solid #d4dfed;background:#fff;border-radius:8px;color:var(--navy);font-size:24px}.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.overview-item{padding:22px;text-align:left;min-height:135px;border:1px solid #d6e2ef;background:#fff;color:var(--ink);border-radius:7px}.overview-item:hover,.overview-item.current{border-color:#779bc6;background:#edf4ff}.overview-item .overview-num{display:block;color:#88a1c0;font-size:18px;margin-bottom:10px}.overview-item strong{font-size:19px;font-weight:600;line-height:1.3;display:block}.overview-item small{display:block;color:#73839a;font-size:12px;line-height:1.5;margin-top:10px}.notes{position:fixed;right:20px;top:20px;bottom:90px;width:490px;background:#fff;border:1px solid #bfcee0;border-radius:14px;padding:27px;z-index:30;overflow:auto;color:var(--ink);box-shadow:0 15px 50px #19345420;display:none}.notes.open{display:block}.notes h2{font-size:23px;line-height:1.3;margin:0 0 20px}.notes h3{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);margin:25px 0 10px}.notes p{font-size:16px;line-height:1.7;margin:0;color:#5e718b}.notes .dialog-close{float:right;margin-left:15px}.notes .sources-note a{display:block;font-size:14px;color:var(--blue);line-height:1.5;margin-bottom:12px}.lightbox{border:0;background:#fff;padding:12px;width:min(96vw,1800px);max-width:96vw;max-height:94vh;border-radius:9px;overflow:auto}.lightbox img{max-width:100%;height:auto;display:block;margin:auto}.lightbox .dialog-close{position:sticky;top:4px;float:right;z-index:1}.lightbox figcaption{text-align:center;color:#667a94;font-size:14px;margin:10px 0 3px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:900px){.help-text{display:none}.controls{padding:0 12px;gap:10px}.controls .word-label{display:none}.notes{left:12px;right:12px;top:12px;bottom:85px;width:auto}.overview-grid{grid-template-columns:1fr 1fr}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;transition-duration:.001ms!important;animation-delay:0ms!important}}
+@media print{@page{size:20in 11.25in;margin:0}html,body{width:1920px;margin:0;background:white;overflow:visible;print-color-adjust:exact;-webkit-print-color-adjust:exact}.viewport{position:static;display:block;overflow:visible}.stage{position:static;width:1920px;height:auto;transform:none!important}.slide,.slide.active{position:relative;display:block!important;width:1920px;height:1080px;break-after:page;page-break-after:always}.slide:last-child{break-after:auto;page-break-after:auto}.controls,.progress-wrap,.notes,dialog{display:none!important}.build-hidden{opacity:1;transform:none;filter:none;pointer-events:auto}.auto,.bullets li{animation:none!important}.hero .hero-logo,.scale .scale-logo{display:block}.reveal-cue{display:none}.patient-screens .shot{opacity:1!important}.focus-dot{box-shadow:none}.shot:after{display:none}.source-chips a{color:inherit}a{text-decoration:none!important}}
+
+.controls .primary:hover{background:#314e77;color:#fff}.contrast:has(.contrast-context:not(.build-hidden)) .reveal-cue{display:none}
+<!-- EXPANDED CSS -->
+/* White medical editorial design with restrained violet accents. */
+:root{--paper:#fff;--ink:#202339;--navy:#3f5c88;--blue:#6854d9;--muted:#687287;--line:#e1e5ef;--ice:#c9d9ff}
+.slide{background:radial-gradient(ellipse at 100% 100%,#eeebff 0,transparent 33%),#fff}
+.hero,.scale{background:radial-gradient(ellipse at 91% 0,#715ad9 0,transparent 42%),linear-gradient(120deg,#263d63,#3f5c88)}
+.slide-header{margin-bottom:42px}.slide h1{max-width:1640px;font-size:62px;font-weight:680;letter-spacing:-.035em}
+.eyebrow{font-size:17px;letter-spacing:.11em;color:#7464b0}.hero .eyebrow,.scale .eyebrow{color:#d6d0ff}
+.bullets li{border-left:3px solid #b2a5ed}.overview-dialog{overflow:auto}.overview-grid{grid-template-columns:repeat(3,1fr)}
+.expanded-body{display:grid;grid-template-columns:455px 1fr;gap:76px;height:735px;position:relative}
+.expanded-body>.bullets{gap:30px;padding-top:12px}.expanded-body>.bullets li{font-size:28px;line-height:1.45}
+.flat-rows{display:grid;align-content:start;gap:0}.flat-row{display:grid;grid-template-columns:280px 1fr;gap:34px;padding:28px 0;border-top:1px solid #d9deea;min-height:125px}
+.flat-row h3{font-size:29px;line-height:1.25;margin:0}.flat-row p{font-size:26px;line-height:1.42;color:var(--muted)}
+.flat-row:first-child{border-top:3px solid #8573ce}.flat-row .row-num{font-size:19px;color:#8e80bb;display:block;margin-bottom:12px}
+.strap{position:absolute;bottom:0;left:0;right:0;font-size:23px;line-height:1.45;color:#65588b;padding-top:18px;border-top:1px solid #ddd6ef}
+.wide-content{height:730px;position:relative}.wide-content>.bullets{display:grid;grid-template-columns:1fr 1fr;gap:75px;margin-bottom:40px}
+.wide-content>.bullets li{font-size:27px}.evidence-compare{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-top:50px}
+.evidence-number{font-size:110px;font-weight:650;letter-spacing:-.06em;color:#6651ce;line-height:1}
+.evidence-number small{font-size:34px;letter-spacing:0}.evidence-label{font-size:29px;margin-top:18px!important;color:var(--ink)}
+.data-bar{height:15px;background:#e8e3f7;margin:28px 0 22px}.data-bar span{display:block;height:100%;background:linear-gradient(90deg,#8a77e7,#3f5c88)}
+.evidence-detail{font-size:25px;line-height:1.5;color:var(--muted);max-width:750px}.study-context{margin-top:48px;font-size:24px;line-height:1.5;color:#5c6380;border-top:1px solid var(--line);padding-top:25px}
+.instrument-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding-top:20px}.instrument-grid article{border-top:3px solid #8470d0;padding-top:30px}
+.instrument-grid h2{font-size:43px}.instrument-grid .evidence-number{font-size:85px}.instrument-grid p{font-size:27px;line-height:1.5;margin-top:20px;color:var(--muted)}
+.role-pair{display:grid;grid-template-columns:1.15fr 1fr;gap:42px;height:540px}.role-view h3{font-size:27px;margin:0 0 18px}.role-view .shot{height:475px}.role-view:last-child .shot img{object-fit:contain}
+.screen .shot{height:500px}.screen .screen-legend{display:flex;gap:28px;margin-top:28px}.screen-legend div{flex:1;border-top:2px solid #b8b0d3;padding-top:18px;font-size:22px;line-height:1.4}.screen-legend strong{display:block;margin-bottom:10px;font-size:25px}
+.domains .flat-row{grid-template-columns:270px 1fr;min-height:117px;padding:23px 0}.signal-list{display:grid;gap:0}.signal-row{display:grid;grid-template-columns:24px 1fr;gap:25px;border-top:1px solid var(--line);padding:22px 0}.signal-dot{width:17px;height:17px;border-radius:50%;margin-top:9px;background:#9299a9}.signal-dot.red{background:#b45269}.signal-dot.amber{background:#c58c3c}.signal-dot.green{background:#448b80}.signal-row h3{font-size:29px}.signal-row p{font-size:25px;line-height:1.4;color:var(--muted)}
+.safety-numbers{display:flex;gap:80px;padding:28px 0 40px;border-bottom:1px solid var(--line)}.safety-numbers .evidence-number{font-size:91px}.safety-numbers p{font-size:23px;margin-top:15px;line-height:1.4}.safety-path{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;margin-top:42px}.safety-path div{border-top:3px solid #c8bce8;padding:22px 0;font-size:26px;line-height:1.4}.safety-path span{display:block;font-size:19px;color:var(--muted);margin-bottom:12px}
+.relations .flat-row{grid-template-columns:380px 1fr;min-height:150px}.relations .flat-row p{font-size:26px}.trajectory-numbers{font-size:105px;letter-spacing:-.055em;color:#3f5c88;margin:35px 0}.trajectory-numbers span{color:#b9b0cf;font-size:60px;margin:0 30px}.delta-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;border-top:1px solid var(--line);padding-top:25px}.delta-grid b{display:block;font-size:59px;color:#6854d9}.delta-grid p{font-size:26px;line-height:1.45;margin-top:15px;color:var(--muted)}
+.window-row{display:grid;grid-template-columns:180px 1fr 330px;gap:28px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}.window-row b{font-size:38px;color:#6651ce}.window-row p{font-size:25px;line-height:1.35}.window-row small{font-size:20px;color:var(--muted);line-height:1.4}.window-row .timebar{height:12px;background:#e8e4f5;margin-bottom:15px}.window-row .timebar span{display:block;background:#8b78d7;height:100%;margin-left:auto}.window-bottom{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-top:28px;padding-top:22px;border-top:2px solid #c3b6e1;font-size:23px;line-height:1.5}
+.recommendation .flat-row{grid-template-columns:250px 1fr;min-height:135px}.limits .flat-row{grid-template-columns:290px 1fr;min-height:145px}.metrics .flat-row{grid-template-columns:300px 1fr;min-height:145px}
+.roadmap .expanded-body{display:block}.roadmap .expanded-body>.bullets{display:grid;grid-template-columns:1fr 1fr;gap:75px;margin-bottom:55px}.roadmap-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:55px}.roadmap-col{border-top:3px solid #8f7bca;padding-top:28px}.roadmap-col .row-num{font-size:23px;color:#9b8cba;display:block;margin-bottom:30px}.roadmap-col h3{font-size:34px;line-height:1.25;min-height:86px}.roadmap-col p{font-size:28px;line-height:1.5;color:var(--muted)}
+.reference-list{display:grid;gap:0}.reference-list a{display:block;text-decoration:none;color:var(--ink);padding:26px 0;border-top:1px solid var(--line)}.reference-list h3{font-size:30px;margin-bottom:10px}.reference-list p{font-size:24px;line-height:1.45;color:var(--muted)}.reference-list a:hover h3{color:#6854d9}
+.references .expanded-body{grid-template-columns:430px 1fr;gap:80px}.hero .hero-logo{filter:drop-shadow(0 30px 55px #b0a9ff22)}
+@media print{.slide{background:#fff}.hero,.scale{background:#3f5c88}.overview-dialog{display:none}}
+
+</style>
+</head>
+<body>
+<main class="viewport" aria-label="Презентация Клинический Компас"><div class="stage" id="stage"></div></main>
+<div class="progress-wrap" aria-hidden="true"><div class="progress" id="progress"></div></div>
+<nav class="controls" aria-label="Управление презентацией">
+ <div class="control-group"><button id="previous" aria-label="Предыдущий шаг">←</button><button class="primary" id="next" aria-label="Следующий шаг"><span id="nextLabel">Далее</span> →</button><span class="counter" id="counter"></span><span class="step-status" id="stepStatus"></span></div>
+ <div class="help-text">← → шаги · Shift + → слайд · F полный экран · N заметки · G обзор</div>
+ <div class="control-group"><button id="overviewButton" aria-label="Обзор всех слайдов">G <span class="word-label">Обзор</span></button><button id="videoButton" aria-label="Видео прототипа">▶ <span class="word-label">Видео</span></button><button id="notesButton" aria-label="Заметки спикера">N <span class="word-label">Заметки</span></button><button id="fullscreenButton" aria-label="Полный экран">⛶</button></div>
+</nav>
+<aside class="notes" id="notes" aria-label="Заметки спикера"><button class="dialog-close" id="notesClose" aria-label="Закрыть заметки">×</button><div id="notesContent"></div></aside>
+<dialog class="overview-dialog" id="overview"><div class="dialog-top"><h2>30 основных + 6 резервных слайдов</h2><button class="dialog-close" data-close="overview" aria-label="Закрыть обзор">×</button></div><div class="overview-grid" id="overviewGrid"></div></dialog>
+<dialog class="lightbox" id="lightbox"><button class="dialog-close" data-close="lightbox" aria-label="Закрыть изображение">×</button><figure><img id="lightboxImage" alt=""/><figcaption id="lightboxCaption"></figcaption></figure></dialog>
+<dialog id="demoVideo" style="border:0;border-radius:12px;padding:12px;width:min(96vw,1600px);background:#fff"><button class="dialog-close" data-close="demoVideo" aria-label="Закрыть видео">×</button><video controls preload="metadata" style="width:100%;max-height:82vh" src="assets/demo.mp4" poster="assets/doctor-analysis.jpg"></video></dialog>
+<div class="sr-only" aria-live="polite" id="announce"></div>
+<script id="deckData" type="application/json">{
+  "project": "Клинический Компас",
+  "title": "Клинический Компас — защита решения",
+  "audience": "Клинические психиатры и технические специалисты МФТИ",
+  "date": "27 октября 2026",
+  "duration": "18–22 минуты + вопросы",
+  "mainSlides": 30,
+  "sources": [
+    {
+      "id": "kr301",
+      "title": "Минздрав РФ. Депрессивный эпизод, РДР",
+      "detail": "КР 301_3, редакция 2024. §2.1, §3.7, §4–5",
+      "url": "https://apicr.minzdrav.gov.ru/api.ashx?id=301_3&op=GetClinrecPdf"
+    },
+    {
+      "id": "kr457",
+      "title": "Минздрав РФ. Генерализованное тревожное расстройство",
+      "detail": "КР 457_3, редакция 2024. §2.1, §3.3, приложение Г2",
+      "url": "https://apicr.minzdrav.gov.ru/api.ashx?id=457_3&op=GetClinrecPdf"
+    },
+    {
+      "id": "phq",
+      "title": "Kroenke et al. The PHQ-9",
+      "detail": "Journal of General Internal Medicine, 2001",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/"
+    },
+    {
+      "id": "gad",
+      "title": "Spitzer et al. The GAD-7",
+      "detail": "Archives of Internal Medicine, 2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16717171/"
+    },
+    {
+      "id": "code",
+      "title": "Код прототипа и журнал проверок",
+      "detail": "47 инженерных тестов; 7 синтетических случаев; версия support-0.3.0",
+      "url": "assets/verification.md"
+    },
+    {
+      "id": "mbc",
+      "title": "Zhu et al. Measurement based care",
+      "detail": "2021. 7 РКИ, 2 019 участников. Ремиссия: 5 исследований",
+      "url": "https://www.psychiatrist.com/jcp/measurement-based-care-depression/"
+    },
+    {
+      "id": "item9",
+      "title": "Na et al. PHQ-9 item 9",
+      "detail": "2018. 841 пациент, сравнение с eC-SSRS",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29477096/"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Клинический Компас",
+      "eyebrow": "Помощь специалисту между клиническими встречами",
+      "kind": "hero",
+      "bullets": [
+        "Объяснимая поддержка наблюдения за пациентом.",
+        "Работающий прототип и план клинического пилота."
+      ],
+      "visual": "Новый знак на крупном цветном поле. Два участника соединяются одной линией наблюдения.",
+      "animation": "Сначала знак, затем название и две роли. Плавное раскрытие за 1,2 секунды.",
+      "note": "Клинический Компас связывает наблюдения пациента с подготовкой специалиста к следующему контакту. Показываем работающий демонстрационный маршрут и условия перехода к пилоту. Основной рассказ занимает около 18–22 минут, резервные слайды предназначены для вопросов.",
+      "number": 1
+    },
+    {
+      "title": "Подготовка к приёму сегодня",
+      "eyebrow": "01 Клиническая задача",
+      "kind": "asis",
+      "bullets": [
+        "Шкалы, жалобы, анамнез и сведения о лечении находятся в разных записях.",
+        "Последовательность событий и противоречия специалист восстанавливает вручную.",
+        "Давность оценки и отсутствие следующей встречи требуют отдельной проверки."
+      ],
+      "steps": [
+        "Беседа",
+        "Результаты шкал",
+        "Личные заметки",
+        "Расписание"
+      ],
+      "visual": "Четыре разобщённых источника. Только после ручной сверки появляется связанная история.",
+      "animation": "Источники появляются в разное время. На последнем шаге соединяются относящиеся к одному событию записи.",
+      "note": "Это гипотеза проблемного процесса, которую нужно подтвердить на площадке пилота. Мы не измеряли среднюю потерю времени. Специалисту приходится связывать шкалы, жалобы, анамнез и расписание вручную.",
+      "number": 2
+    },
+    {
+      "kind": "editorial",
+      "title": "Первый сценарий применения",
+      "eyebrow": "Границы продукта",
+      "bullets": [
+        "Взрослые пациенты с тревожными и депрессивными симптомами.",
+        "Повторное наблюдение и подготовка к контакту.",
+        "Клиническое решение принимает специалист."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Начальная область намеренно ограничена. Клинический психолог использует подсказки в пределах компетенций и при необходимости организует совместное ведение. Название диагноза в карте не означает, что система автоматически его установила.",
+      "rows": [
+        [
+          "Пациент",
+          "Передаёт самоотчёт между встречами по согласованному плану."
+        ],
+        [
+          "Специалист",
+          "Проверяет динамику, исходные ответы и контекст жизни."
+        ],
+        [
+          "Организация",
+          "Проверяет применимость и пользу в согласованном клиническом процессе."
+        ]
+      ],
+      "strap": "Детский контур и самостоятельная диагностика не входят в текущую реализацию.",
+      "number": 3
+    },
+    {
+      "kind": "evidence",
+      "title": "Основания для регулярного измерения",
+      "eyebrow": "02 Доказательная основа",
+      "bullets": [
+        "Measurement based care предполагает обсуждение измерений пациентом и специалистом.",
+        "Исследования поддерживают подход, но не доказывают эффективность нашего приложения."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Zhu et al., 2021: 7 РКИ, 2 019 участников с депрессивными расстройствами, все исследования включали фармакотерапию. Ремиссию оценивали в 5 исследованиях с 1 518 участниками. Нескорректированные доли 52,8% и 43,0%, OR 1,83, 95% ДИ 1,12–2,97. Это сравнение групп, не изменение во времени. Для ответа на лечение значимого различия не было. Авторы отмечали неоднородность и риск систематических ошибок.",
+      "sources": [
+        "mbc"
+      ],
+      "number": 4
+    },
+    {
+      "kind": "instruments",
+      "title": "PHQ-9 и GAD-7 в наблюдении",
+      "eyebrow": "Инструменты измерения",
+      "bullets": [
+        "Короткие шкалы дают повторяемые показатели симптомной нагрузки.",
+        "Результат дополняют анамнез, функционирование и беседа."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "В исходном исследовании PHQ-9 при пороге ≥10 чувствительность и специфичность составили 88% и 88%. Для GAD-7 при ≥10 — 89% и 82%. Это диагностические характеристики в конкретных выборках первичной помощи, не точность нашего алгоритма и не гарантия переноса на психиатрическую популяцию. Периодичность назначает специалист с учётом периода воспоминания шкалы.",
+      "sources": [
+        "phq",
+        "gad"
+      ],
+      "number": 5
+    },
+    {
+      "title": "Целевой цикл наблюдения",
+      "eyebrow": "03 Решение",
+      "kind": "tobe",
+      "bullets": [
+        "Пациент заполняет назначенные опросники и дневник.",
+        "Алгоритм проверяет записи, объясняет динамику и предлагает вопросы к беседе.",
+        "Специалист уточняет состояние, согласует план и следующую встречу."
+      ],
+      "steps": [
+        "Самоотчёт",
+        "Проверка данных",
+        "Сводка специалисту",
+        "Встреча и план"
+      ],
+      "image": "assets/doctor-calendar.jpg",
+      "visual": "На одном экране сопоставить AS IS и TO BE. Внизу замкнуть маршрут следующей встречей.",
+      "animation": "Те же элементы предыдущего слайда выстраиваются в последовательность. Движение подчёркивает изменение процесса.",
+      "note": "Пациент вносит назначенные измерения, система проверяет данные, специалист получает основания для обсуждения и согласует следующий контакт. Безопасная связь с подтверждённой доставкой сообщений относится к развитию продукта, а не к уже внедрённому каналу экстренной помощи.",
+      "number": 6
+    },
+    {
+      "kind": "dual",
+      "title": "Две роли в одном маршруте",
+      "eyebrow": "Функциональный прототип",
+      "bullets": [
+        "Пациент передаёт наблюдения. Специалист проверяет и интерпретирует.",
+        "Обе стороны используют одну связанную историю."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "На слайде реальные экраны локального прототипа с вымышленными данными. Вход по коду связывает демонстрационный кабинет с картой. Это не промышленная аутентификация.",
+      "number": 7
+    },
+    {
+      "title": "Работа специалиста",
+      "eyebrow": "Демонстрация врача",
+      "kind": "doctor",
+      "bullets": [
+        "Из обзора и реестра доступны карта, анамнез, результаты и документы.",
+        "Запись и напоминания встроены в маршрут работы с пациентом.",
+        "Каждый статус раскрывает причину, по которой нужен просмотр или контакт."
+      ],
+      "image": "assets/doctor-patients.jpg",
+      "steps": [
+        "Обзор",
+        "Карта",
+        "Уточнение",
+        "Запись"
+      ],
+      "visual": "Настоящий скрин реестра. Три фокуса: нужная карта, причина статуса, запись на встречу.",
+      "animation": "Последовательная подсветка трёх фокусов, затем короткий проход по маршруту. Скрин можно увеличить.",
+      "note": "Показать связность интерфейса. В текущей версии исправлены возврат в обзор после добавления и сохранение карточки при быстром возврате. Измерение удобства со специалистами запланировано.",
+      "number": 8
+    },
+    {
+      "title": "Наблюдения пациента",
+      "eyebrow": "Демонстрация пациента",
+      "kind": "patient",
+      "bullets": [
+        "Назначенные опросники и дневник доступны в кабинете.",
+        "Пациент отмечает самочувствие, приём и нежелательные ощущения.",
+        "Переданный комментарий доступен специалисту; личный дневник ведётся отдельно."
+      ],
+      "image": "assets/patient-home.jpg",
+      "secondImage": "assets/patient-test.jpg",
+      "steps": [
+        "Подключение",
+        "Опросник",
+        "Отметка",
+        "Обсуждение"
+      ],
+      "visual": "Два реальных экрана: ежедневная отметка и первый вопрос PHQ-9. Никаких макетов вместо работающего интерфейса.",
+      "animation": "Смена экранов по шагам сценария. Акцент на явном выборе передачи комментария.",
+      "note": "Периодичность определяется специалистом, а не общим правилом 1–2 раза в неделю для всех. В демонстрации нет подтверждённого канала экстренного уведомления. Выбранная жалоба не означает установленную лекарственную реакцию.",
+      "number": 9
+    },
+    {
+      "kind": "screen",
+      "title": "Следующий контакт в поле внимания",
+      "eyebrow": "Непрерывность наблюдения",
+      "bullets": [
+        "Из списка пациента можно перейти к записи.",
+        "Цвет расписания показывает организационный статус.",
+        "Прошедший слот не считается проведённой сессией."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Алгоритм использует подтверждённую дату сессии. Резервный интервал 30 дней является организационной настройкой. Даже если новая запись появилась, длительный перерыв остаётся видимым.",
+      "rows": [
+        [
+          "Красный",
+          "Перерыв больше индивидуального интервала."
+        ],
+        [
+          "Жёлтый",
+          "Предстоящая встреча не указана."
+        ],
+        [
+          "Зелёный",
+          "Встреча назначена."
+        ]
+      ],
+      "image": "assets/doctor-calendar.jpg",
+      "caption": "Расписание прототипа",
+      "strap": "Статус расписания не является оценкой тяжести состояния.",
+      "number": 10
+    },
+    {
+      "kind": "domains",
+      "title": "Пять направлений наблюдения",
+      "eyebrow": "04 Медицинская модель",
+      "bullets": [
+        "Суммарный балл описывает только часть клинической картины.",
+        "Система сопоставляет измерения с явным контекстом."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Оси собраны по материалам врача. Степень функционирования вводит специалист. Приверженность здесь описывается отдельными самоотчётами, а не валидированной итоговой шкалой. Уровень безопасности не рассчитывается из одного пункта.",
+      "rows": [
+        [
+          "Симптомы",
+          "PHQ-9 и GAD-7, дата, исходные ответы"
+        ],
+        [
+          "Безопасность",
+          "Пункт 9 как основание для прямого уточнения"
+        ],
+        [
+          "Переносимость",
+          "Жалобы пациента и фактическая схема терапии"
+        ],
+        [
+          "Выполнение плана",
+          "Сообщённые пропуски и барьеры участия"
+        ],
+        [
+          "Функционирование",
+          "Работа, отношения, самообслуживание и цели"
+        ]
+      ],
+      "number": 11
+    },
+    {
+      "title": "Путь от записи к подсказке",
+      "eyebrow": "Алгоритм поддержки",
+      "kind": "medical",
+      "bullets": [
+        "Датированные шкалы, дневник и функционирование описывают доступное состояние.",
+        "Анамнез, переносимость и фактический приём уточняют интерпретацию.",
+        "На выходе видны оценка, основания, неопределённость и рекомендации специалисту."
+      ],
+      "steps": [
+        "Шкалы и ответы",
+        "Дневник",
+        "Функционирование",
+        "Анамнез и лечение"
+      ],
+      "image": "assets/doctor-analysis.jpg",
+      "visual": "Четыре входа сходятся в прозрачную последовательность проверок и объяснимую сводку. Возле выхода — фрагмент реального интерфейса.",
+      "animation": "Каждый вход добавляет одно основание к выводу. Противоречие не исчезает, а становится видимым.",
+      "note": "Основной движок support-0.3.0 проверяет пригодность записей, выделяет отдельный сигнал пункта 9, рассчитывает сопоставимые траектории и формирует подсказки с объяснением. Дополнительный обзор сочетаний работает отдельно и пока имеет менее строгую временную валидацию.",
+      "sources": [
+        "kr301",
+        "kr457"
+      ],
+      "number": 12
+    },
+    {
+      "title": "Проверка качества данных",
+      "eyebrow": "Условия корректной интерпретации",
+      "kind": "quality",
+      "bullets": [
+        "Будущие даты, неверные суммы и конфликтующие дубли исключаются из интерпретации.",
+        "Смена формы разрывает сопоставимую последовательность.",
+        "Историческая сводка использует только сведения, доступные на дату тестирования."
+      ],
+      "steps": [
+        "Дата",
+        "Диапазон и сумма",
+        "Версия и дубли",
+        "Временной срез"
+      ],
+      "visual": "Временная линия: тест в августе, новый результат в октябре. Показать, почему октябрь нельзя использовать для августовского вывода.",
+      "animation": "Попытка перенести позднюю запись в прошлое останавливается на временной границе. Ошибочная сумма выводится в отдельный сигнал.",
+      "note": "Проверяются дата, максимум, диапазон, длина ответов и сумма. Совпадающие дубли не увеличивают число наблюдений. Конфликт последнего дня не подменяется более старым благополучным результатом. Исторический срез не переносит сегодняшние лекарства и недатированный анамнез в прошлое.",
+      "number": 13
+    },
+    {
+      "kind": "signals",
+      "title": "Светофор с явным основанием",
+      "eyebrow": "Приоритет внимания",
+      "bullets": [
+        "Приоритет зависит от фактов и актуальности данных.",
+        "Цвет всегда сопровождают объяснение и следующий шаг."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Положительный пункт 9 и выраженное функционирование имеют приоритет даже при неизвестном возрасте. Без подтверждённого взрослого возраста взрослые вмешательства не применяются автоматически. Цвет состояния, категория отдельного теста и расписание решают разные задачи.",
+      "rows": [
+        [
+          "red",
+          "Прямая оценка или высокая нагрузка",
+          "Свежий пункт 9, выраженные ограничения либо высокий балл. Основание различается."
+        ],
+        [
+          "amber",
+          "Контекст требует проверки",
+          "Симптомы, ограничения, жалобы, пропуски или несогласованные сведения."
+        ],
+        [
+          "green",
+          "Низкие зарегистрированные баллы",
+          "Описывает доступные свежие шкалы, не подтверждает безопасность."
+        ],
+        [
+          "neutral",
+          "Недостаточно применимых данных",
+          "Нужны актуальные измерения или проверка возрастной применимости."
+        ]
+      ],
+      "strap": "Красный по высокому баллу не означает автоматически экстренную ситуацию.",
+      "number": 14
+    },
+    {
+      "kind": "safety",
+      "title": "Пункт 9 и прямая оценка",
+      "eyebrow": "Отдельный сигнал безопасности",
+      "bullets": [
+        "Положительный ответ сохраняется даже при несогласованной сумме PHQ-9.",
+        "Актуальность и клиническую срочность уточняет специалист."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Na et al., 2018: 841 пациент, сравнение с eC-SSRS. Чувствительность пункта 9 составила 87,6%, PPV 28,6%. Это характеристики относительно критерия исследования, не вероятность суицида конкретного пациента. Отрицательный ответ не доказывает безопасность. Приложение не отправляет автоматическое экстренное уведомление. Исторический ответ сохраняется для уточнения; истечение окна свежести не означает разрешение сигнала.",
+      "sources": [
+        "item9",
+        "kr301"
+      ],
+      "number": 15
+    },
+    {
+      "kind": "relations",
+      "title": "Сочетания данных для проверки врачом",
+      "eyebrow": "Обзор взаимосвязей",
+      "bullets": [
+        "Правила формируют проверяемую гипотезу и вопрос.",
+        "Причинность требует хронологии и клинической оценки."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Это конечный набор явных правил. Совпадение аллергена проверяется только по точному нормализованному названию активного назначения и отдельно введённого вещества. Нет справочника торговых синонимов, составов и перекрёстной аллергии. При пропусках лекарственного анамнеза система показывает неизвестность.",
+      "rows": [
+        [
+          "Жалоба + активная терапия",
+          "Уточнить начало симптома, фактический приём и альтернативные причины."
+        ],
+        [
+          "Рост шкалы + пропуск до результата",
+          "Проверить последовательность событий и барьеры помощи."
+        ],
+        [
+          "Назначение + структурированный аллерген",
+          "Сверить точное совпадение, МНН и характер прошлой реакции."
+        ],
+        [
+          "Жалоба + соматический фактор",
+          "Не пропустить соматическое объяснение."
+        ]
+      ],
+      "strap": "Совпадение дат или названий не устанавливает лекарственную причинность.",
+      "number": 16
+    },
+    {
+      "title": "Клинический контекст меняет вопросы",
+      "eyebrow": "Два демонстрационных случая",
+      "kind": "contrast",
+      "bullets": [
+        "Улучшение шкал оценивается вместе с функционированием и устойчивостью изменений.",
+        "Невысокий PHQ-9 не скрывает отмеченный анамнез подъёма активности.",
+        "Алгоритм объясняет, какой контекст меняет следующий шаг специалиста."
+      ],
+      "visual": "Слева: PHQ-9 14 → 9 → 6. Справа: PHQ-9 7 и анамнез подъёма активности. В обоих случаях раскрыть разные основания.",
+      "animation": "Сначала показать только баллы. Следующим нажатием раскрыть контекст и сменить следующий шаг. Это главный эффект неожиданного, но объяснимого вывода.",
+      "note": "Оба случая вымышлены. Система не устанавливает БАР и не объявляет ремиссию. Она выводит вопросы для проверки и разные сценарии помощи.",
+      "sources": [
+        "kr301"
+      ],
+      "number": 17
+    },
+    {
+      "kind": "dynamics",
+      "title": "Динамика и клиническая значимость",
+      "eyebrow": "Наблюдаемые изменения",
+      "bullets": [
+        "Сравниваем одну шкалу внутри непрерывного участка одной формы.",
+        "Изменение баллов сопоставляем с функционированием и беседой."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Для серии 14, 9, 6 разница −8 баллов, относительное изменение −57%. Это арифметика наблюдений, не вероятность ремиссии и не доказательство эффективности конкретной терапии. В серии 14, 5, 8 есть колебания. Надёжное изменение с учётом ошибки измерения и отдельный MCID в коде не реализованы.",
+      "number": 18
+    },
+    {
+      "kind": "timewindows",
+      "title": "Временные параметры прототипа",
+      "eyebrow": "Авторские настройки алгоритма",
+      "bullets": [
+        "Окна имеют разные точки отсчёта.",
+        "Значения требуют проверки с клинической командой в пилоте."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "90 дней отсчитываются перед последней точкой конкретной шкалы, а не всегда перед сегодняшней датой. Свежесть 14 дней в основном движке считается от даты оценки. Окно сочетания 7 дней расположено до результата. В дополнительном обзоре повторные пропуски считаются за 14 дней перед последним дневником. Для содержательной базы также нужны известная форма и свежий последний результат. Эти настройки не являются универсальными сроками из КР.",
+      "number": 19
+    },
+    {
+      "title": "Условные сценарии динамики",
+      "eyebrow": "Горизонт 2–4 недели",
+      "kind": "forecast",
+      "bullets": [
+        "Сравниваются точки одного инструмента и непрерывного участка одной версии.",
+        "Сценарии описывают сохранение условий, благоприятные изменения и новые барьеры.",
+        "При недостатке данных система объясняет, что необходимо уточнить."
+      ],
+      "visual": "Фактическая история слева. Справа три текстовые ветви с условиями. Числовые будущие баллы не рисовать.",
+      "animation": "Сначала появляется история. После неё раскрываются три условные ветви, визуально отличные от наблюдаемых фактов.",
+      "note": "Сценарий описывает возможное развитие при заданных условиях. При пункте 9, выраженных ограничениях, подъёме активности, проблеме качества или неизвестной взрослой применимости сначала требуется уточнение. При недостатке повторных данных система сообщает, что добавить. Нет числовой вероятности, доверительного интервала и внешней валидации сценарной логики.",
+      "number": 20
+    },
+    {
+      "kind": "recommendation",
+      "title": "Каждая подсказка раскрывает основания",
+      "eyebrow": "Объяснимость",
+      "bullets": [
+        "Специалист видит исходный факт, действие и источник.",
+        "Пересмотр связан с уточнением контекста или новыми данными."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "В объекте advice хранятся id, приоритет, причина, действие, условие пересмотра и sourceIds. Механизм декларативной публикации правил существует отдельно, но ещё не подключён как шлюз утверждения всех отображаемых подсказок. Это важная задача до пилота.",
+      "rows": [
+        [
+          "Факт",
+          "Пациент сообщает приём, действующая схема отсутствует."
+        ],
+        [
+          "Объяснение",
+          "Динамику нельзя связывать с непроверенной терапией."
+        ],
+        [
+          "Действие",
+          "Сверить фактические средства и назначившего врача."
+        ],
+        [
+          "Пересмотр",
+          "После уточнения схемы и временной последовательности."
+        ]
+      ],
+      "sources": [
+        "kr301",
+        "kr457"
+      ],
+      "number": 21
+    },
+    {
+      "title": "Архитектура действующего прототипа",
+      "eyebrow": "05 Техническое решение",
+      "kind": "architecture",
+      "bullets": [
+        "Next.js, React и TypeScript связывают интерфейсы специалиста и пациента.",
+        "Отдельные модули проверяют качество, рассчитывают динамику и формируют рекомендации.",
+        "Локальный API, память процесса и localStorage пока образуют демонстрационный контур."
+      ],
+      "steps": [
+        "React UI",
+        "Next.js API",
+        "Структурированные записи",
+        "TypeScript-модули",
+        "Объяснимая сводка"
+      ],
+      "visual": "Раздельно показать слой интерфейсов, данных и доменной логики. Production-хранилище и интеграции обозначить как следующий этап.",
+      "animation": "Одно событие проходит через слои, на каждом появляется проверяемый результат. Не изображать несуществующий LLM или обученную модель.",
+      "note": "Next.js и React формируют интерфейсы, TypeScript-модули выполняют явные правила. Демонстрационный API хранит состояние в процессе, рабочий браузер использует localStorage. Клинический движок воспроизводим при одинаковых входе и дате. Сеть и сохранение ещё не соответствуют промышленному медицинскому контуру.",
+      "number": 22
+    },
+    {
+      "title": "Почему выбраны эти тестовые случаи",
+      "eyebrow": "Проверка ветвлений алгоритма",
+      "kind": "cases",
+      "bullets": [
+        "Проверяются динамика, безопасность, клинический контекст и неизвестность.",
+        "Для каждого случая задано ожидаемое поведение алгоритма.",
+        "15 прохождений в семи картах служат проверке сценариев, а не оценке клинической точности."
+      ],
+      "cases": [
+        [
+          "Улучшение",
+          "Не объявлять ремиссию"
+        ],
+        [
+          "Пункт 9",
+          "Приоритет прямой оценки"
+        ],
+        [
+          "Выраженная тревога",
+          "Раздельная динамика шкал"
+        ],
+        [
+          "Подъём активности",
+          "Контекст важнее низкой суммы"
+        ],
+        [
+          "Соматический контекст",
+          "Сверка анамнеза и терапии"
+        ],
+        [
+          "Просроченные шкалы",
+          "Обновление оценки"
+        ],
+        [
+          "Неполная карта",
+          "Явная неизвестность"
+        ]
+      ],
+      "visual": "Семь коротких сценариев, сгруппированных как динамика, контекст и полнота. Никаких графиков распространённости по семи случаям.",
+      "animation": "Каждый сценарий раскрывает входной факт и ожидаемое поведение.",
+      "note": "Семь вымышленных карт и 15 прохождений проверяют разные ошибки: ложное успокоение низким баллом, игнорирование пункта 9, устаревшие данные, неизвестный контекст и соматическое объяснение. Массивы ответов технически сформированы под сумму. Это не репрезентативная клиническая выборка и не обучение модели.",
+      "number": 23
+    },
+    {
+      "title": "Что подтверждают проведённые проверки",
+      "eyebrow": "06 Проверка качества",
+      "kind": "tests",
+      "bullets": [
+        "47 модульных проверок покрывают даты, ответы, версии, динамику и ограничения данных.",
+        "В браузере проверены основные маршруты, сохранение, запись и интерактивные результаты.",
+        "Клиническую точность и полезность проверит отдельное исследование."
+      ],
+      "metrics": [
+        [
+          "47",
+          "модульных проверок"
+        ],
+        [
+          "7",
+          "сценариев"
+        ],
+        [
+          "2",
+          "пользовательские роли"
+        ]
+      ],
+      "visual": "Три уровня: инженерная проверка, сценарная проверка интерфейса, будущая клиническая оценка. Последний уровень остаётся планом.",
+      "animation": "Счётчик 47 сопровождается группами проверок. Статусы выполнено и запланировано визуально различаются.",
+      "note": "27 октября 2026 повторно выполнена команда npm run test:clinical: 47 успешных тестов. Проверяются инварианты дат, версий, ответов, возраста и исторического среза. Основные маршруты ранее проверялись вручную в браузере. Полного клинического исследования, нагрузочного тестирования и оценки эффекта в медицинской организации пока не было.",
+      "sources": [
+        "code"
+      ],
+      "number": 24
+    },
+    {
+      "kind": "limits",
+      "title": "Готовность решения к следующему этапу",
+      "eyebrow": "Честная оценка зрелости",
+      "bullets": [
+        "Связанный пользовательский маршрут работает в демонстрации.",
+        "Для реальных пациентов нужен подготовленный защищённый пилот."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Ключевые ограничения известны и переведены в задачи. Прототип не подключён к реальной ЕМИАС. Детерминизм улучшает проверяемость, но сам по себе не доказывает медицинскую правильность. Согласие специалиста не заменяет недостающие данные и валидацию.",
+      "rows": [
+        [
+          "Работает",
+          "Шкалы, дневник, динамика, объяснения и расписание."
+        ],
+        [
+          "Требует доработки",
+          "Единые валидаторы, версионирование записей, журнал решений по сигналам."
+        ],
+        [
+          "Требует проверки",
+          "Клиническая полезность, нагрузка на специалиста и ошибочные сигналы."
+        ],
+        [
+          "Вне текущего контура",
+          "Автодиагностика, подбор доз, полный фармакологический справочник."
+        ]
+      ],
+      "number": 25
+    },
+    {
+      "title": "Пилот с критериями перехода",
+      "eyebrow": "07 Внедрение",
+      "kind": "pilot",
+      "bullets": [
+        "Сначала защищённый контур, экспертная разметка и согласованный протокол.",
+        "Затем наблюдение без влияния на решения и контролируемый пилот со специалистами.",
+        "Измеряем время подготовки, полноту данных, полезность и нежелательные последствия подсказок."
+      ],
+      "steps": [
+        "Экспертная проверка",
+        "Теневой режим",
+        "Контролируемый пилот",
+        "Решение о расширении"
+      ],
+      "visual": "Stage-gate маршрут. На границе каждого этапа — критерий: безопасность, согласованность, польза, готовность эксплуатации.",
+      "animation": "Следующий этап открывается после критерия предыдущего. Никаких фиктивных уже достигнутых процентов эффективности.",
+      "note": "Предлагаемый маршрут, а не уже выполненное исследование. Сначала протокол и экспертная оценка, затем теневой режим без влияния на решение, затем контролируемое использование. До начала фиксируются метрики, допустимая нагрузка, правила остановки и ответственные. Размер выборки и сроки зависят от дизайна и доступности площадки.",
+      "number": 26
+    },
+    {
+      "kind": "metrics",
+      "title": "Критерии пользы для клиники",
+      "eyebrow": "План оценки",
+      "bullets": [
+        "Сравниваем рабочий процесс до и после внедрения.",
+        "Скорость оцениваем вместе с качеством и последствиями."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Экспертные значимые случаи должны иметь заранее определённые критерии и независимую проверку. Нельзя оценивать систему только по кликам или доле зелёных статусов. Клинические исходы требуют отдельного дизайна, горизонта наблюдения и обоснования размера выборки.",
+      "rows": [
+        [
+          "Время подготовки",
+          "Медиана минут на карту и дополнительное время проверки подсказок."
+        ],
+        [
+          "Качество подсказок",
+          "Доля подтверждённых, ложные сигналы и пропущенные экспертно значимые случаи."
+        ],
+        [
+          "Участие пациента",
+          "Заполнение назначений, причины пропусков и доступность интерфейса."
+        ],
+        [
+          "Рабочая нагрузка",
+          "Число сигналов, сроки просмотра и незакрытые задачи."
+        ]
+      ],
+      "strap": "Целевые значения утверждаются до пилота. Фактическое улучшение пока не измерено.",
+      "number": 27
+    },
+    {
+      "kind": "roadmap",
+      "title": "Технический маршрут масштабирования",
+      "eyebrow": "Целевая архитектура",
+      "bullets": [
+        "Сначала надёжный контур одной организации.",
+        "Расширение начинается после проверки работы и ответственности."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Общий вычислительный модуль можно отделить от интерфейса и выполнять по событию поступления данных. Нужны идемпотентность событий, миграции и контроль версий. Конкретные требования к обработке медицинских данных и статусу продукта определяются с профильными специалистами до работы с реальными пациентами.",
+      "rows": [
+        [
+          "Пилотная площадка",
+          "Постоянная БД, роли, аудит, резервирование, мониторинг ошибок."
+        ],
+        [
+          "Интеграции",
+          "Согласованные API МИС, словари, сверка идентификаторов и источников."
+        ],
+        [
+          "Несколько организаций",
+          "Изоляция данных, настройки маршрутов, версионирование правил и наблюдаемость."
+        ]
+      ],
+      "strap": "Архитектурный план. Промышленная интеграция пока не выполнена.",
+      "number": 28
+    },
+    {
+      "kind": "roadmap",
+      "title": "Функциональное развитие продукта",
+      "eyebrow": "Планируемый функционал",
+      "bullets": [
+        "Развитие идёт по проверяемым клиническим задачам.",
+        "Новые модели вводятся после отдельной оценки качества."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Приоритет ближайшего выпуска — работа с сигналом до документированного решения. NLP должен извлекать факты с источником и подтверждением специалиста. Вероятностный прогноз требует отдельной репрезентативной выборки, исходов, внешней проверки и калибровки. Это не обещание универсального охвата всех взаимосвязей.",
+      "rows": [
+        [
+          "Ближайший выпуск",
+          "Журнал реакции на сигнал, история назначений, закрытие задачи, индивидуальные планы."
+        ],
+        [
+          "После пилота",
+          "Командное ведение, подтверждённая связь, дополнительные шкалы и доступность."
+        ],
+        [
+          "После накопления данных",
+          "Проверенные лекарственные базы, NLP с подтверждением фактов, валидируемый прогноз."
+        ]
+      ],
+      "strap": "Детский контур и новые нозологии потребуют собственной методологии и проверки.",
+      "number": 29
+    },
+    {
+      "title": "Партнёрство для клинического пилота",
+      "eyebrow": "Следующий шаг",
+      "kind": "scale",
+      "bullets": [
+        "Клиническая площадка проверяет сценарии, критерии значимости и маршрутизацию.",
+        "Инженерная команда готовит защищённый контур и единый каталог правил.",
+        "Совместный пилот оценивает полезность и условия расширения."
+      ],
+      "steps": [
+        "Работающий прототип",
+        "Подготовленный пилот",
+        "Масштабирование по результатам"
+      ],
+      "visual": "Финал в цвете нового знака. Три этапа развития и один конкретный запрос к аудитории.",
+      "animation": "Архитектура расширяется слоями. В финале остаются логотип, маршрут к пилоту и запрос к партнёрам.",
+      "note": "Просим доступ к экспертной оценке и площадке пилота, а не разрешение сразу внедрять прототип во все процессы. На слайде 30 основной рассказ заканчивается. Далее материалы для ответов комиссии.",
+      "number": 30
+    },
+    {
+      "kind": "references",
+      "title": "Клинические источники",
+      "eyebrow": "Резерв 1 Источники",
+      "bullets": [
+        "Ссылки относятся к конкретным редакциям и разделам.",
+        "Авторские временные окна отмечены отдельно от положений КР."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "В коде используются КР 301_3 и 457_3 редакции 2024. Полные тексты ранее получены с официального PDF-сервиса. Отдельно не подтверждено, что это самые новые редакции на дату защиты. Перед пилотом нужна повторная проверка актуальности и экспертное утверждение каждого правила.",
+      "sources": [
+        "kr301",
+        "kr457",
+        "phq",
+        "gad"
+      ],
+      "number": 31
+    },
+    {
+      "kind": "references",
+      "title": "Исследования подхода и сигналов",
+      "eyebrow": "Резерв 2 Исследования",
+      "bullets": [
+        "Показатели исследования инструмента не равны показателям нашего продукта.",
+        "На слайдах приведены популяция, критерий и ограничение переноса."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Прямые ссылки ведут к публикациям Zhu 2021 и Na 2018. Характеристики скрининга зависят от популяции и референсного стандарта. Для эффективности Клинического Компаса требуется отдельное исследование.",
+      "sources": [
+        "mbc",
+        "item9"
+      ],
+      "number": 32
+    },
+    {
+      "kind": "editorial",
+      "title": "Почему правила выбраны для первого этапа",
+      "eyebrow": "Резерв 3 Методология",
+      "bullets": [
+        "Каждое условие можно проверить на исходной записи.",
+        "Ограниченный каталог проще рецензировать и тестировать."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Универсальный вычислитель декларативных правил уже есть в lib/clinical-rules.ts, однако он не подключён к основным подсказкам. Нельзя утверждать, что весь интерфейс уже проходит проверенный процесс медицинского утверждения.",
+      "rows": [
+        [
+          "Сейчас",
+          "Явные условия, версия алгоритма, объяснение и исходный факт."
+        ],
+        [
+          "До пилота",
+          "Единая временная политика и каталог правил с реальным утверждением."
+        ],
+        [
+          "Дальше",
+          "Статистические модели для конкретного исхода при наличии данных."
+        ]
+      ],
+      "strap": "Детерминированность обеспечивает воспроизводимость, но не заменяет валидацию.",
+      "number": 33
+    },
+    {
+      "kind": "editorial",
+      "title": "Ответы на сложные вопросы",
+      "eyebrow": "Резерв 4 Вопросы комиссии",
+      "bullets": [
+        "Отсутствующие сведения остаются неизвестными.",
+        "Решение специалиста требует собственного клинического основания."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Не обещаем нулевое число пропусков, доказанную безопасность или автоматическую экстренную маршрутизацию. Эти вопросы нужно решать в рамках клинического процесса, а не только интерфейса.",
+      "rows": [
+        [
+          "Почему не единый риск в процентах?",
+          "Нет валидированной модели исхода и калибровки для целевой популяции."
+        ],
+        [
+          "Почему не все лекарства?",
+          "Нет проверенной базы составов, взаимодействий и перекрёстных реакций."
+        ],
+        [
+          "Что происходит после сигнала?",
+          "Сейчас специалист видит подсказку. Журнал закрытия и доставка уведомлений запланированы."
+        ]
+      ],
+      "number": 34
+    },
+    {
+      "kind": "editorial",
+      "title": "Экономика пилота",
+      "eyebrow": "Резерв 5 Оценка внедрения",
+      "bullets": [
+        "Экономический эффект измеряется на площадке.",
+        "В расчёт включается стоимость проверки ошибочных сигналов."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Не подставляем выдуманные финансовые результаты. Можно провести хронометраж до пилота и после него, отдельно учитывая время на сигналы и обучение. Расширение оправдано только при приемлемом качестве и нагрузке.",
+      "rows": [
+        [
+          "Выгода по времени",
+          "Число карт × подтверждённое сокращение времени подготовки × стоимость минуты."
+        ],
+        [
+          "Затраты",
+          "Интеграция, сопровождение, обучение и дополнительное время проверки."
+        ],
+        [
+          "Решение о расширении",
+          "Сопоставить чистую пользу, качество процесса и доступные ресурсы."
+        ]
+      ],
+      "strap": "Формула для планирования. Цена, ROI и экономия пока не измерены.",
+      "number": 35
+    },
+    {
+      "kind": "editorial",
+      "title": "Пример проверки одного случая",
+      "eyebrow": "Резерв 6 Трассировка",
+      "bullets": [
+        "Фиксируем дату оценки и сопоставимые измерения.",
+        "Каждый вывод связывается с входным условием."
+      ],
+      "visual": "Крупная типографика и последовательное раскрытие содержания",
+      "animation": "Последовательное раскрытие элементов по нажатию",
+      "note": "Функционирование в исходной карте не оценено, поэтому нужна отдельная оценка. Снижение шкалы не доказывает ремиссию или причинный эффект терапии. Дата оценки обязательна, поскольку свежесть меняется со временем.",
+      "rows": [
+        [
+          "Вход",
+          "Алексей, 32 года. PHQ-9: 14, 9, 6. GAD-7: 12, 5. Последний результат 24.10.2026."
+        ],
+        [
+          "Динамика",
+          "Обе шкалы снижаются. Для GAD-7 только две точки, база сценария предварительная."
+        ],
+        [
+          "Контекст",
+          "Дневник сообщает приём, активной схемы нет. Сводка жёлтая, нужна сверка."
+        ]
+      ],
+      "strap": "Пример рассчитан на 27.10.2026. Вымышленная карта, не клинический результат.",
+      "number": 36
+    }
+  ]
+}</script>
+<script>
+(()=>{
+ const deck=JSON.parse(document.getElementById('deckData').textContent);
+ const sources=new Map(deck.sources.map(s=>[s.id,s]));
+ const stage=document.getElementById('stage');
+ const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const maxSteps={hero:0,asis:1,tobe:2,doctor:3,patient:1,contrast:1,medical:2,forecast:1,architecture:3,quality:2,cases:0,tests:1,sources:2,pilot:3,scale:1,editorial:2,evidence:1,instruments:1,dual:1,screen:1,domains:2,signals:2,safety:2,relations:2,dynamics:1,timewindows:2,recommendation:2,limits:2,metrics:2,roadmap:2,references:1};
+ const sourceLabel=s=>s.id==='mbc'?'MBC · Zhu 2021':s.id==='item9'?'Пункт 9 · Na 2018':s.id==='kr301'?'КР 301_3':s.id==='kr457'?'КР 457_3':s.id==='phq'?'PHQ-9 · 2001':s.id==='gad'?'GAD-7 · 2006':'Журнал проверок';
+ const bullets=s=>`<ul class="bullets">${s.bullets.map((b,i)=>`<li style="--i:${i}">${escape(b)}</li>`).join('')}</ul>`;
+ const build=(n,html,classes='')=>`<div class="build ${classes}" data-reveal="${n}">${html}</div>`;
+ const shot=(url,alt,extra='')=>`<button class="shot ${extra}" data-image="${escape(url)}" data-caption="${escape(alt)}" aria-label="Увеличить: ${escape(alt)}"><img src="${escape(url)}" alt="${escape(alt)}" loading="eager"/><span class="shot-caption">${escape(alt)} · увеличить<small>Локальный прототип · вымышленные данные</small></span></button>`;
+ const stepNodes=(steps,descriptions=[],withConnectors=false)=>`<div class="path-row">${steps.map((st,i)=>`${i&&withConnectors?'<div class="path-connector" aria-hidden="true"></div>':''}<div class="path-node"><span class="step-number">${String(i+1).padStart(2,'0')}</span><strong>${escape(st)}</strong>${descriptions[i]?`<p>${escape(descriptions[i])}</p>`:''}</div>`).join('')}</div>`;
+ function visual(s,i){switch(s.kind){
+  case 'hero':return `<img class="hero-logo auto" style="--delay:0ms" src="assets/logo.svg" alt="Логотип Клинического Компаса"/><div class="slide-header auto" style="--delay:150ms"><div class="eyebrow">${escape(s.eyebrow)}</div><h1>${escape(s.title)}</h1></div>${bullets(s)}<div class="hero-roles auto" style="--delay:700ms"><span class="role">Пациент</span><span class="between"></span><span>Наблюдение между встречами</span><span class="between"></span><span class="role">Специалист</span></div><p class="deck-tag auto" style="--delay:800ms">Функциональный прототип<br>Маршрут к клиническому пилоту<br>${escape(deck.duration)}</p>`;
+  case 'asis':return `<div class="body two-columns">${bullets(s)}<div class="visual asis-map"><svg class="asis-link build" data-reveal="1" viewBox="0 0 1000 480" aria-hidden="true"><line x1="150" y1="85" x2="500" y2="240"/><line x1="840" y1="110" x2="500" y2="240"/><line x1="170" y1="400" x2="500" y2="240"/><line x1="840" y1="380" x2="500" y2="240"/></svg>${s.steps.map((st,j)=>`<div class="fragment auto" style="--delay:${j*140}ms"><span class="small-label">Источник ${j+1}</span><strong>${escape(st)}</strong></div>`).join('')}<div class="asis-center">Ручная<br>сверка</div>${build(1,'Связанная история появляется после сопоставления','final-caption')}</div></div>`;
+  case 'tobe':return `<div class="body">${bullets(s)}<div class="tobe-diagram">${stepNodes(s.steps,['Пациент','Проверяемые условия','Основания и вопросы','Решение специалиста'],true)}</div>${build(1,'<span>Следующий контакт продолжает цикл</span>','loop-return')}<div class="tobe-bottom">${build(2,'<b>01</b><span>Одна история наблюдения<br>для следующей встречи</span>','tobe-line')}${build(2,shot(s.image,'Реальное расписание прототипа'))}</div></div>`;
+  case 'doctor':return `<div class="body two-columns">${bullets(s)}<div class="visual">${shot(s.image,'Кабинет специалиста · реестр пациентов')}${build(1,'1','focus-dot one')}${build(2,'2','focus-dot two')}${build(3,'3','focus-dot three')}<div class="path-row">${s.steps.map((st,j)=>`<div class="path-node" data-focus="${Math.max(1,j)}"><strong>${String(j+1).padStart(2,'0')} ${escape(st)}</strong></div>`).join('')}</div></div></div>`;
+  case 'patient':return `<div class="body">${bullets(s)}<div class="visual"><div class="patient-screens">${shot(s.image,'Кабинет пациента · ежедневная отметка','screen-primary')}${shot(s.secondImage,'Назначенный опросник PHQ-9','screen-secondary')}</div>${stepNodes(s.steps)}</div></div>`;
+  case 'contrast':return `<div class="body"><article class="contrast-card"><p class="contrast-title">Случай A · динамика PHQ-9</p><div class="scores"><span>14</span><span class="arrow">→</span><span>9</span><span class="arrow">→</span><span>6</span></div>${build(1,'<p>Есть снижение баллов. Устойчивость и функционирование ещё требуют оценки.</p><span class="status teal">Обсудить закрепление улучшений</span>','contrast-context')}</article><article class="contrast-card"><p class="contrast-title">Случай B · последний PHQ-9</p><div class="scores"><span>7</span><small>из 27</small></div>${build(1,'<p>В анамнезе отмечен подъём активности. Невысокая сумма его не исключает.</p><span class="status amber">Уточнить эпизоды настроения</span>','contrast-context')}<span class="reveal-cue">Контекст раскрывается следующим шагом</span></article>${bullets(s)}</div>`;
+  case 'medical':return `<div class="body">${bullets(s)}<div class="visual"><div class="medical-flow"><div class="inputs">${s.steps.map((st,j)=>`<div class="input-node auto" style="--delay:${j*100}ms">${escape(st)}</div>`).join('')}</div><div class="path-connector"></div>${build(1,'<span class="small-label">Прозрачная логика</span><div class="rule"></div><p>Качество записей<br>Временной контекст<br>Сопоставимая динамика</p>','logic-node')}<div class="path-connector build" data-reveal="2"></div>${build(2,'<h3>Сводка</h3><p>Оценка состояния<br>Основания<br>Неопределённость<br>Следующий шаг</p>','output-node')}</div><div class="mini-evidence">${shot(s.image,'Реальная клиническая сводка')}<p>Вывод можно раскрыть<br>до исходного факта и даты.</p></div></div></div>`;
+  case 'forecast':return `<div class="body">${bullets(s)}<div class="visual forecast-board"><div class="history-line"><span class="small-label">Наблюдаемые факты</span><svg viewBox="0 0 300 180" role="img" aria-label="Иллюстрация наблюдаемого снижения баллов 14, 9, 6"><path d="M20 155H285" stroke="#c9d9ed" fill="none"/><path class="trace" d="M28 40L150 90L275 120" stroke="#3f5c88" stroke-width="4" fill="none"/>${[[28,40,'14'],[150,90,'9'],[275,120,'6']].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="#f8fbff" stroke="#3f5c88" stroke-width="3"/><text x="${p[0]}" y="${p[1]-19}" fill="#3f5c88" text-anchor="middle" font-size="25">${p[2]}</text>`).join('')}</svg><p>Один инструмент.<br>Сопоставимые точки.</p></div><div class="forecast-boundary" aria-hidden="true"></div>${build(1,'<svg viewBox="0 0 100 455" aria-hidden="true"><path d="M0 228H35V62H100M35 228H100M35 228V393H100" stroke="#9ab5d6" stroke-width="2" fill="none" stroke-dasharray="7 7"/></svg>','branch-lines')}${build(1,'<article class="scenario"><h3>Сохранение условий</h3><p>Возможно продолжение<br>наблюдаемого направления.</p></article><article class="scenario"><h3>Благоприятные изменения</h3><p>Устранены барьеры,<br>улучшается функционирование.</p></article><article class="scenario"><h3>Новые факторы</h3><p>Стрессоры и ухудшение<br>могут изменить траекторию.</p></article>','scenario-stack')}<p class="forecast-foot">Будущие числовые баллы и проценты вероятности не рассчитываются.</p></div></div>`;
+  case 'architecture':return `<div class="body">${bullets(s)}<div class="visual architecture-stack"><div class="arch-box arch-ui"><span class="small-label">Интерфейсы</span><div>React UI</div><small>Специалист и пациент</small></div><div class="arch-arrow">→</div>${build(1,'<span class="small-label">Обмен</span><div>Next.js API</div><small>Локальный development-контур</small>','arch-box arch-api')}${build(1,'Структурированные записи · память процесса + localStorage','arch-data')}${build(2,'<div>Входные проверки<code>patient-insights.ts</code></div><div>Контекст и связи<code>clinical-synthesis.ts</code></div><div>Состояние и сценарии<code>clinical-support.ts</code></div>','arch-modules')}${build(3,'Объяснимая сводка с основаниями','arch-output')}<p class="arch-target">Следующий этап: постоянное хранилище, роли доступа, аудит и согласованные интеграции.</p></div></div>`;
+  case 'quality':return `<div class="body">${bullets(s)}<div class="visual"><div class="quality-checks">${s.steps.map(st=>`<div>${escape(st)}</div>`).join('')}</div><div class="time-axis"><div class="time-event august">Тест в августе<small>Сведения на дату оценки</small></div>${build(1,'Только доступное тогда','time-gate')}<div class="time-event october">Новый результат<small>Октябрь</small></div>${build(2,'Поздняя запись<br>не меняет прошлый вывод','blocked')}</div>${build(2,'Δ = последний балл − первый балл<br><span class="caption">Наблюдаемое изменение. Будущие данные не меняют прошлый вывод.</span>','quality-message')}</div></div>`;
+  case 'cases':return `<div class="body">${bullets(s)}<div class="visual case-grid">${s.cases.map((c,j)=>`<article class="case-item auto" style="--delay:${j*80}ms"><span class="num">${String(j+1).padStart(2,'0')}</span><h3>${escape(c[0])}</h3><p>${escape(c[1])}</p></article>`).join('')}</div></div>`;
+  case 'tests':return `<div class="body">${bullets(s)}<div class="visual"><div class="metric-row">${s.metrics.map(m=>`<div class="metric"><b>${escape(m[0])}</b><span>${escape(m[1])}</span></div>`).join('')}</div><div class="test-layers"><div class="test-layer"><div><strong>Инженерная проверка</strong><small>Даты, ответы, версии, ограничения</small></div><span class="status teal">47 PASS</span></div><div class="test-layer"><div><strong>Сценарии интерфейса</strong><small>Маршруты, сохранение, интерактивность</small></div><span class="status teal">Проверено вручную</span></div>${build(1,'<div><strong>Клиническая оценка</strong><small>Точность, полезность, последствия</small></div><span class="status neutral">Следующий этап</span>','test-layer')}</div><p class="metrics-caption">Инженерная корректность и клиническая эффективность — разные уровни доказательств.</p></div></div>`;
+  case 'sources':return `<div class="body">${bullets(s)}<div class="visual"><div class="trace-path"><div class="trace-step">Входной факт</div><span class="muted">→</span>${build(1,'Правило','trace-step')}<span class="muted">→</span>${build(1,'Рекомендация','trace-step')}<span class="muted">→</span>${build(2,'Источник','trace-step')}</div><div class="source-grid">${s.sources.map(id=>sources.get(id)).filter(Boolean).map(src=>`<a class="source-card auto" href="${escape(src.url)}" target="_blank" rel="noreferrer"><span class="external">↗</span><span class="source-id">${escape(sourceLabel(src))}</span><h3>${escape(src.title)}</h3><p>${escape(src.detail)}</p></a>`).join('')}</div></div></div>`;
+  case 'pilot':return `<div class="body">${bullets(s)}<div class="visual"><div class="pilot-road">${s.steps.map((st,j)=>`<article class="pilot-stage build" data-reveal="${j}"><span class="num">${String(j+1).padStart(2,'0')}</span><h3>${escape(st)}</h3><p>${['Согласованный протокол<br>и экспертная разметка','Наблюдение без влияния<br>на клинические решения','Проверка полезности<br>в рабочем процессе','Совместная оценка результатов<br>и готовности эксплуатации'][j]}</p><span class="gate">Критерий: ${['безопасность','согласованность','польза','готовность'][j]}</span></article>`).join('')}</div><p class="pilot-bottom">До старта фиксируются метрики, целевые значения,<br>условия перехода и правила остановки.</p></div></div>`;
+  case 'scale':return `<img class="scale-logo auto" src="assets/logo.svg" alt="Логотип Клинического Компаса"/><div class="body">${bullets(s)}<div class="visual"><div class="scale-road">${s.steps.map((st,j)=>`<div class="scale-step ${j?'build':''}" ${j?'data-reveal="1"':''}>${escape(st)}<small>${['Связанный сценарий уже работает','Проверка пользы и надёжности','Общий стандарт с локальными маршрутами'][j]}</small></div>`).join('')}</div>${build(1,'Клиническая площадка.<br>Экспертиза.<br>Совместная инженерная команда.','closing-line')}</div></div>`;
+
+  case 'editorial':case 'domains':case 'relations':case 'recommendation':case 'limits':case 'metrics':return `<div class="expanded-body">${bullets(s)}<div class="flat-rows">${s.rows.map((r,j)=>build(Math.min(j,2),`<h3>${escape(r[0])}</h3><p>${escape(r[1])}</p>`,'flat-row')).join('')}</div>${s.strap?`<p class="strap">${escape(s.strap)}</p>`:''}</div>`;
+  case 'evidence':return `<div class="wide-content">${bullets(s)}<div class="evidence-compare"><article><div class="evidence-number">52,8<small>%</small></div><p class="evidence-label">Регулярное измерение и обсуждение</p><div class="data-bar"><span style="width:52.8%"></span></div><p class="evidence-detail">Нескорректированная доля ремиссии<br>в группе MBC.</p></article>${build(1,'<div class="evidence-number">43,0<small>%</small></div><p class="evidence-label">Сравнительные условия</p><div class="data-bar"><span style="width:43%"></span></div><p class="evidence-detail">Разница 9,8 процентного пункта.<br>Показатель внешнего исследования.</p>')}</div><p class="study-context">Zhu et al., 2021: ремиссия в 5 исследованиях, n = 1 518. OR 1,83; 95% ДИ 1,12–2,97.<br>Исследования включали фармакотерапию. Есть неоднородность и риск систематических ошибок.</p></div>`;
+  case 'instruments':return `<div class="wide-content">${bullets(s)}<div class="instrument-grid"><article><h2>PHQ-9</h2><div class="evidence-number">88% / 88%</div><p>Чувствительность / специфичность<br>при пороге ≥10.<br>Kroenke et al., 2001.</p></article>${build(1,'<article><h2>GAD-7</h2><div class="evidence-number">89% / 82%</div><p>Чувствительность / специфичность<br>при пороге ≥10.<br>Spitzer et al., 2006.</p></article>')}</div><p class="strap">Характеристики исходных исследований. Перенос на целевую популяцию требует проверки.</p></div>`;
+  case 'dual':return `<div class="wide-content">${bullets(s)}<div class="role-pair"><div class="role-view"><h3>Специалист</h3>${shot('assets/doctor-analysis.jpg','Аналитика врача')}</div>${build(1,'<h3>Пациент</h3>'+shot('assets/patient-home.jpg','Кабинет пациента'),'role-view')}</div></div>`;
+  case 'screen':return `<div class="expanded-body">${bullets(s)}<div>${shot(s.image,s.caption)}<div class="screen-legend">${s.rows.map(r=>`<div><strong>${escape(r[0])}</strong>${escape(r[1])}</div>`).join('')}</div></div><p class="strap">${escape(s.strap)}</p></div>`;
+  case 'signals':return `<div class="expanded-body">${bullets(s)}<div class="signal-list">${s.rows.map((r,j)=>build(Math.min(j,2),`<span class="signal-dot ${r[0]}"></span><div><h3>${escape(r[1])}</h3><p>${escape(r[2])}</p></div>`,'signal-row')).join('')}</div><p class="strap">${escape(s.strap)}</p></div>`;
+  case 'safety':return `<div class="expanded-body">${bullets(s)}<div><div class="safety-numbers"><div><div class="evidence-number">87,6%</div><p>Чувствительность<br>пункта 9</p></div><div><div class="evidence-number">28,6%</div><p>PPV относительно<br>критерия eC-SSRS</p></div></div>${build(1,'<div><span>01 Исходный ответ</span>Открыть форму<br>и дату</div><div><span>02 Прямой контакт</span>Уточнить мысли,<br>намерения и контекст</div><div><span>03 Решение</span>Действовать<br>по локальному протоколу</div>','safety-path')}${build(2,'Na et al., 2018, n = 841. Эти числа не являются индивидуальной вероятностью суицида.','study-context')}</div><p class="strap">Автоматического экстренного уведомления в прототипе нет.</p></div>`;
+  case 'dynamics':return `<div class="expanded-body">${bullets(s)}<div><div class="trajectory-numbers">14<span>→</span>9<span>→</span>6</div><div class="delta-grid"><div><b>−8 баллов</b><p>Последний результат<br>минус первый.</p></div>${build(1,'<b>−57%</b><p>Наблюдаемое изменение<br>от исходного балла.</p>')}</div><p class="study-context">Серия 14 → 5 → 8 означает колебания,<br>даже если итог ниже исходного значения.</p></div><p class="strap">Клиническую значимость уточняют по функционированию и беседе. MCID и надёжное изменение не рассчитываются.</p></div>`;
+  case 'timewindows':return `<div class="wide-content">${bullets(s)}<div>${[['90 дней','Глубина сопоставимой серии','Перед последним результатом шкалы',100],['14 дней','Свежесть в основном движке','Перед датой текущей оценки',65],['7 дней','Рост шкалы и дневник','До результата, включая его дату',35]].map((r,j)=>build(j,`<b>${r[0]}</b><div><div class="timebar"><span style="width:${r[3]}%"></span></div><p>${r[1]}</p></div><small>${r[2]}</small>`,'window-row')).join('')}</div><div class="window-bottom"><p>Направление: ≥2 точек и ≥7 дней.<br>Более содержательная база: ≥3 точек, ≥14 дней, известная форма и свежий результат.</p><p>2–4 недели: условный сценарий.<br>30 дней: резервный организационный интервал между подтверждёнными сессиями.</p></div><p class="strap">Настройки прототипа. Длина полос условная; это не единая медицинская временная шкала.</p></div>`;
+  case 'roadmap':return `<div class="expanded-body">${bullets(s)}<div class="roadmap-cols">${s.rows.map((r,j)=>build(j,`<span class="row-num">${String(j+1).padStart(2,'0')}</span><h3>${escape(r[0])}</h3><p>${escape(r[1])}</p>`,'roadmap-col')).join('')}</div><p class="strap">${escape(s.strap)}</p></div>`;
+  case 'references':return `<div class="expanded-body">${bullets(s)}<div class="reference-list">${s.sources.map(id=>sources.get(id)).filter(Boolean).map((r,j)=>`<a href="${escape(r.url)}" target="_blank" rel="noreferrer"><h3>${escape(r.title)} ↗</h3><p>${escape(r.detail)}</p></a>`).join('')}</div></div>`;
+
+  default:return `<div class="body">${bullets(s)}</div>`;
+ }}
+ function footer(s,i){return `<footer class="slide-footer"><span class="footer-brand"><img src="assets/logo.svg" alt=""/>Клинический Компас</span><div class="source-chips">${(s.sources||[]).map(id=>sources.get(id)).filter(Boolean).map(src=>`<a href="${escape(src.url)}" target="_blank" rel="noreferrer" title="${escape(src.title+' · '+src.detail)}">${escape(sourceLabel(src))} ↗</a>`).join('')}</div><span class="slide-number">${String(i+1).padStart(2,'0')} / ${deck.slides.length}</span></footer>`;}
+ stage.innerHTML=deck.slides.map((s,i)=>`<section class="slide ${escape(s.kind)}" id="slide-${i+1}" data-slide="${i}" aria-label="Слайд ${i+1}: ${escape(s.title)}">${s.kind==='hero'?'':`<header class="slide-header"><div class="eyebrow auto">${escape(s.eyebrow)}</div><h1 class="auto" style="--delay:100ms">${escape(s.title)}</h1></header>`}${visual(s,i)}${footer(s,i)}</section>`).join('');
+ const slides=[...stage.querySelectorAll('.slide')];
+ let index=Math.min(deck.slides.length-1,Math.max(0,Number(location.hash.slice(1))-1||0)),step=0;
+ function size(){const availableW=innerWidth-44,availableH=innerHeight-104;stage.style.transform=`scale(${Math.min(availableW/1920,availableH/1080)})`;}
+ function updateNotes(){const s=deck.slides[index];document.getElementById('notesContent').innerHTML=`<h2>${String(index+1).padStart(2,'0')}. ${escape(s.title)}</h2><h3>Ключевые тезисы</h3><p>${s.bullets.map(escape).join('<br><br>')}</p><h3>Слова спикера</h3><p>${escape(s.note)}</p><h3>Визуальная идея</h3><p>${escape(s.visual)}</p><h3>Анимация</h3><p>${escape(s.animation)}</p>${s.sources?`<h3>Источники</h3><div class="sources-note">${s.sources.map(id=>sources.get(id)).filter(Boolean).map(src=>`<a href="${escape(src.url)}" target="_blank" rel="noreferrer">${escape(src.title)}<br>${escape(src.detail)}</a>`).join('')}</div>`:''}`;}
+ function render(){slides.forEach((sl,i)=>{sl.classList.toggle('active',i===index);sl.setAttribute('aria-hidden',String(i!==index));if(i===index){sl.querySelectorAll('[data-reveal]').forEach(el=>el.classList.toggle('build-hidden',Number(el.dataset.reveal)>step));sl.querySelectorAll('[data-focus]').forEach(el=>el.classList.toggle('active-focus',step>0&&Number(el.dataset.focus)===step));const first=sl.querySelector('.screen-primary'),second=sl.querySelector('.screen-secondary');if(first){first.classList.toggle('screen-active',step===0);second.classList.toggle('screen-active',step>0);}}});document.getElementById('counter').textContent=`${String(index+1).padStart(2,'0')} / ${deck.slides.length}`;const max=maxSteps[deck.slides[index].kind]||0;document.getElementById('stepStatus').textContent=max?`Шаг ${step+1}/${max+1}`:'';document.getElementById('nextLabel').textContent=step<max?'Раскрыть':index===deck.slides.length-1?'Сначала':'Далее';document.getElementById('progress').style.width=`${((index+1)/deck.slides.length)*100}%`;document.getElementById('announce').textContent=`Слайд ${index+1} из ${deck.slides.length}. ${deck.slides[index].title}. ${max?`Шаг ${step+1} из ${max+1}.`:''}`;history.replaceState(null,'',`#${index+1}`);updateNotes();}
+ function go(i){index=Math.max(0,Math.min(deck.slides.length-1,i));step=0;render();}
+ function next(skip=false){const max=maxSteps[deck.slides[index].kind]||0;if(!skip&&step<max){step++;render()}else go(index===deck.slides.length-1?0:index+1);}
+ function previous(skip=false){if(!skip&&step>0){step--;render()}else go(index-1);}
+ function fullscreen(){if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.();}
+ document.getElementById('next').addEventListener('click',()=>next());document.getElementById('previous').addEventListener('click',()=>previous());document.getElementById('fullscreenButton').addEventListener('click',fullscreen);
+ const demoVideo=document.getElementById('demoVideo');document.getElementById('videoButton').addEventListener('click',()=>demoVideo.showModal());demoVideo.addEventListener('close',()=>demoVideo.querySelector('video').pause());
+ const notes=document.getElementById('notes');document.getElementById('notesButton').addEventListener('click',()=>notes.classList.toggle('open'));document.getElementById('notesClose').addEventListener('click',()=>notes.classList.remove('open'));
+ const overview=document.getElementById('overview');function showOverview(){document.getElementById('overviewGrid').innerHTML=deck.slides.map((s,i)=>`<button class="overview-item ${i===index?'current':''}" data-jump="${i}"><span class="overview-num">${String(i+1).padStart(2,'0')}</span><strong>${escape(s.title)}</strong><small>${escape(s.eyebrow)}</small></button>`).join('');overview.showModal();}document.getElementById('overviewButton').addEventListener('click',showOverview);
+ document.addEventListener('click',e=>{const close=e.target.closest('[data-close]');if(close)document.getElementById(close.dataset.close).close();const jump=e.target.closest('[data-jump]');if(jump){go(Number(jump.dataset.jump));overview.close()}const image=e.target.closest('[data-image]');if(image){document.getElementById('lightboxImage').src=image.dataset.image;document.getElementById('lightboxImage').alt=image.dataset.caption;document.getElementById('lightboxCaption').textContent=image.dataset.caption;document.getElementById('lightbox').showModal();}});
+ document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()}));
+ document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]'))return;if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next(e.shiftKey)}else if(e.key==='ArrowLeft'){e.preventDefault();previous(e.shiftKey)}else if(e.key==='PageDown'){e.preventDefault();next(true)}else if(e.key==='PageUp'){e.preventDefault();previous(true)}else if(e.key==='Home'){e.preventDefault();go(0)}else if(e.key==='End'){e.preventDefault();go(deck.slides.length-1)}else if(e.key.toLowerCase()==='f'){e.preventDefault();fullscreen()}else if(e.key.toLowerCase()==='n'){e.preventDefault();notes.classList.toggle('open')}else if(e.key.toLowerCase()==='g'){e.preventDefault();showOverview()}else if(e.key==='Escape'){notes.classList.remove('open')}});
+ window.addEventListener('resize',size);window.addEventListener('hashchange',()=>{const n=Number(location.hash.slice(1));if(n>=1&&n<=deck.slides.length&&n-1!==index)go(n-1)});
+ const onPrint=()=>slides.forEach(sl=>sl.querySelectorAll('[data-reveal]').forEach(el=>el.classList.remove('build-hidden')));window.addEventListener('beforeprint',onPrint);window.addEventListener('afterprint',render);
+ size();render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Local authoring runtimes and render intermediates
+/.tools/
+/docs/algorithm-docx-qa/
+/docs/pitch/qa/
+/docs/pitch/qa-expanded/
+/docs/pitch/*.cjs
+/docs/pitch/*.py
+/docs/pitch/expanded-layouts.html
+/docs/pitch/demo-invite.local.json
+/docs/build_algorithm_docx.py
+/docs/demo/raw/
+/docs/demo/*.webm
+/docs/demo/video-cues.json
+/docs/demo/recording-error.png
+/docs/demo/*.png
+/docs/demo/*.jpg
+/AGENTS.md
