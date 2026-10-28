@@ -1,3 +1,4 @@
+<p align="center"><strong>Русский</strong> · <a href="README.en.md">English</a> · <a href="README.de.md">Deutsch</a></p>
 <p align="center"><img src="public/logo.svg" width="112" alt="Логотип Клинического Компаса"></p>
 <h1 align="center">Клинический Компас</h1>
 <p align="center">Объяснимая поддержка клинического наблюдения<br>Кабинет специалиста и кабинет пациента</p>
